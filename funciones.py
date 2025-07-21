@@ -8,9 +8,24 @@ def listarCursos(cursos):
         print(" ")
 
 def pedirDatosRegistro():
-    codigo=input("Ingrese codigo: ")   
-    nombre=input("Ingrese nombre: ")
-    creditos=int(input("Ingrese créditos: ")) 
+    codigoCorrecto=False
+    while (not codigoCorrecto):
+        codigo=input("Ingrese codigo: ") 
+        if len(codigo)==10:
+            codigoCorrecto=True
+        else:
+            print("Codigo incorrecto, debe tener 6 digitos")
 
-    curso=(codigo,nombre,creditos)
+    nombre=input("Ingrese nombre: ")
+
+    creditosCorrectos=False
+    while (not creditosCorrectos):
+        credito=input("Ingrese créditos: ")
+        if credito.isnumeric():
+            if (int(credito)>0):
+                creditosCorrectos=True 
+                credito=int(credito)
+        else:
+            print("creditos incorrectos, debe ser un número mayor a 0")
+    curso=(codigo,nombre,credito)
     return curso
