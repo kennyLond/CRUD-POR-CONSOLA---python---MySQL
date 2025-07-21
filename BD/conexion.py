@@ -19,8 +19,9 @@ class DAO():
         if self.conexion.is_connected():
             try:
                 cursor = self.conexion.cursor()
-                cursor.execute("SELECT * FROM curso ORDER BY nombre ASC")
+                cursor.execute("SELECT * FROM cursos ORDER BY nombre ASC")
                 resultados = cursor.fetchall()
                 return resultados
             except Error as ex:
                 print("Error al listar los cursos: {0}".format(ex))
+                

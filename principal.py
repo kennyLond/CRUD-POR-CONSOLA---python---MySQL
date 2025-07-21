@@ -1,3 +1,6 @@
+from BD.conexion import DAO
+import funciones
+
 def menuPrincipal():
     continuar = True
     while continuar: 
@@ -23,6 +26,25 @@ def menuPrincipal():
                 ejecutarOpcion(opcion)
 
 def ejecutarOpcion(opcion):
-    print("Opción seleccionada:", opcion)
+    dao = DAO()
+
+    if opcion == 1:
+        try:
+            cursos=dao.listarCursos()
+            if len(cursos) > 0:
+                funciones.listarCursos(cursos)
+            else:
+                print("No se encontraron cursos...")
+        except:
+            print("Ocurrio un error..")        
+
+    elif opcion == 2:
+        print ("Registro")
+    elif opcion == 3:
+        print ("Actualización")
+    elif opcion == 4:
+        print("Eliminación")
+    else:
+        print("Opción no Valida...")
 
 menuPrincipal()
