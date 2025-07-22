@@ -5,7 +5,7 @@ def menuPrincipal():
     continuar = True
     while continuar: 
         opcionCorrecta = False
-        while not opcionCorrecta:
+        while not  opcionCorrecta:
             print("========= MENÚ PRINCIPAL =============")
             print("1 - Listar Curso")
             print("2 - Registrar Curso")
@@ -33,7 +33,7 @@ def ejecutarOpcion(opcion):
             cursos=dao.listarCursos()
             if len(cursos) > 0:
                 funciones.listarCursos(cursos)
-            else:
+            else: 
                 print("No se encontraron cursos...")
         except:
             print("Ocurrio un error..")        
@@ -47,7 +47,17 @@ def ejecutarOpcion(opcion):
     elif opcion == 3:
         print ("Actualización")
     elif opcion == 4:
-        print("Eliminación")
+        try:
+            cursos=dao.listarCursos()
+            if len(cursos)>0:
+                codigoEliminar=funciones.pedirDatosEliminacion(cursos)
+                if not (codigoEliminar ==""):
+                    dao.eliminarCurso(codigoEliminar)
+                else:
+                    print("Codigo de curso no encontrado")
+        except:
+            print("Ocurrio un error...")
+
     else:
         print("Opción no Valida...")
 

@@ -29,3 +29,17 @@ def pedirDatosRegistro():
             print("creditos incorrectos, debe ser un número mayor a 0")
     curso=(codigo,nombre,credito)
     return curso
+
+def pedirDatosEliminacion(cursos):
+    listarCursos(cursos)
+
+    existeCodigo = False
+    codigoEliminar=input("Ingrese el codigo del curos para eliminar: ")
+    for cur in cursos:
+        if cur[0] == codigoEliminar:
+            existeCodigo=True
+            break
+    if not existeCodigo:
+        codigoEliminar=""
+
+    return codigoEliminar 

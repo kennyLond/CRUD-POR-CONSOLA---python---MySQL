@@ -35,3 +35,14 @@ class DAO():
                 print("¡Curso REGISTRADO!\n")
             except Error as ex:
                 print("Error al intentar la conexión:{0}".format(ex))
+
+    def eliminarCurso(self,codigoCursoEiminar):
+        if self.conexion.is_connected():
+            try:
+                cursor=self.conexion.cursor()
+                sql="DELETE FROM cursos WHERE codigo = '{0}' "
+                cursor.execute(sql.format(codigoCursoEiminar))
+                self.conexion.commit()
+                print("¡Curso ELIMINADO!\n")
+            except Error as ex:
+                print("Error al intentar la conexión:{0}".format(ex))
