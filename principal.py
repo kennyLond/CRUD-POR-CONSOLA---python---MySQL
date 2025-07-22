@@ -45,7 +45,18 @@ def ejecutarOpcion(opcion):
         except:
             print("Ocurrio un error...")
     elif opcion == 3:
-        print ("Actualización")
+        try:
+            cursos=dao.listarCursos()
+            if len(cursos)>0:
+                curso = funciones.pedirDatosActualizacion(cursos)
+                if curso:
+                    dao.actualizarCurso(curso)
+                else:
+                    print("Codigo de curso actualizar no encontrado")
+            else:
+                    print("Codigo de curso no encontrado")
+        except:
+            print("Ocurrio un error...")
     elif opcion == 4:
         try:
             cursos=dao.listarCursos()

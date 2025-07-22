@@ -35,6 +35,17 @@ class DAO():
                 print("¡Curso REGISTRADO!\n")
             except Error as ex:
                 print("Error al intentar la conexión:{0}".format(ex))
+    
+    def actualizarCurso(self,curso):
+        if self.conexion.is_connected():
+            try:
+                cursor=self.conexion.cursor()
+                sql="UPDATE cursos SET nombre = '{0}', credito = {1} where codigo = '{2}'"
+                cursor.execute(sql.format(curso[1], curso[2],curso[0]))
+                self.conexion.commit()
+                print("¡Curso ACTUALIZADO!\n")
+            except Error as ex:
+                print("Error al intentar la conexión:{0}".format(ex))
 
     def eliminarCurso(self,codigoCursoEiminar):
         if self.conexion.is_connected():
