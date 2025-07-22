@@ -67,19 +67,24 @@ INSERT INTO cursos (codigo, nombre, credito) VALUES
 
 ---
 
-##  Evidencia visual
+##  Evidencia 
 
-- Imagen del menú en ejecución  
-- Registro de cursos  
-- Actualización o eliminación de cursos  
-- Estructura del proyecto  
-
-
+### Menú principal
 ![Menú principal](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/001MEN%C3%9A.png?raw=true)
+
+### Lista de Cursos
 ![Lista de Cursos](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/002_listar.png?raw=true)
+
+### Registro de Cursos
 ![Registro de Cursos](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/003_registrar.png?raw=true)
+
+### Lista de curso agregado
 ![Lista de curso agregado](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/004_listar_registro.png?raw=true)
+
+### Eliminar Curso
 ![Eliminar Curso](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/005_eliminar.png?raw=true)
+
+### Lista de Curso actualizado 
 ![Lista de Curso actualizado ](https://github.com/kennyLond/CRUD-POR-CONSOLA---python---MySQL/blob/main/assets/img/006_listar_eliminado.png?raw=true)
 
 
