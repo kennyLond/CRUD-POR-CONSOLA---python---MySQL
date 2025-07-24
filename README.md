@@ -121,4 +121,4 @@ python principal.py
 ## ✍️ Autor
 
 Kenny Orlando Londoño Torrado  
-[GitHub](https://github.com/kennyLond)
+
